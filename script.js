@@ -26,12 +26,14 @@ function import_picture() {
         let reader = new FileReader();
         reader.onload = function (e) {
             imgOverview.src = e.target.result;
+            imgOverview.hidden = false;
         };
         reader.readAsDataURL(inputPicture.files[0]);
         submitButton.hidden = false;
     }
     else {
-        imgOverview.src = "";
+        imgOverview.src = null;
+        imgOverview.hidden = true;
         submitButton.hidden = true;
     }
 }
