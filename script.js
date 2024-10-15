@@ -72,11 +72,16 @@ async function submit_picture() {
 function display_output() {
     if (!checkDisplay.checked) {
         outputDisplay.textContent = null;
-        if (output && output.objects && output.objects.length > 0) {
-            output.objects.forEach((obj, index) => {
-                const objectText = `Object ${index + 1}: ${obj.object} (Confidence: ${(obj.confidence * 100).toFixed(2)}%)\n`;
-                outputDisplay.textContent += objectText;
-            });
+        if (output && output.objects) {
+            if (output.objects.length > 0) {
+                output.objects.forEach((obj, index) => {
+                    const objectText = `Object ${index + 1}: ${obj.object} (Confidence: ${(obj.confidence * 100).toFixed(2)}%)\n`;
+                    outputDisplay.textContent += objectText;
+                });
+            }
+            else {
+                outputDisplay.textContent = "No object";
+            }
         }
     }
     else {
