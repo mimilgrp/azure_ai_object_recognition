@@ -18,8 +18,8 @@
     </nav>
     <div class="container">
         <div class="row">
-            <div class="col-lg-5">
-                <div class="container-fluid div-zone">
+            <div class="div-col col-lg-5">
+                <div class="div-zone">
                     <h3>Input</h3>
                     <label class="input input-button" id="input-button" for="input-picture">Import a picture</label>
                     <input type="file" id="input-picture" name="input-picture" accept="image/png, image/jpeg" onchange="import_picture()" hidden>
@@ -27,8 +27,8 @@
                     <input class="input input-button" type="submit" id="submit-button" value="Submit" onclick="submit_picture()" hidden>
                 </div>
             </div>
-            <div class="col-lg-7">
-                <div class="container-fluid div-zone">
+            <div class="div-col col-lg-7">
+                <div class="div-zone">
                     <h3>Output</h3>
                     <pre class="output-display" id="output-display"></pre>
                     <input type="checkbox" id="check-display" onchange="display_output()">
