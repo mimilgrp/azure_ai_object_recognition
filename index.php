@@ -39,6 +39,49 @@
     <nav class="navbar navbar-dark justify-content-center fixed-bottom navbar-bottom">
         <p class="copyright">&copy; 2024 OUVRARD Emilien, MERYET Benjamin and ASTRUC Mathieu</p>
     </nav>
+
+    <script>
+        const pictureInput = document.getElementById('picture');
+        const envoyerButton = document.getElementById('envoyer');
+        const apercu = document.getElementById('apercu');
+        const resultDisplay = document.getElementById('result');
+
+        // Activer le bouton envoyer quand une image est sélectionnée
+        pictureInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    apercu.src = e.target.result;
+                    apercu.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+                envoyerButton.disabled = false;
+            }
+        });
+
+        // Envoyer le formulaire
+        document.getElementById('imageForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Empêcher le rechargement de la page
+
+            const formData = new FormData();
+            formData.append('picture', pictureInput.files[0]);
+
+            // Envoyer la requête à l'API
+            fetch('https://raphsonnewton99.cognitiveservices.azure.com/vision/v3.2/detect', { // Remplacez par l'URL de votre API
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Afficher la réponse de l'API
+                resultDisplay.textContent = JSON.stringify(data, null, 2);
+            })
+            .catch(error => {
+                resultDisplay.textContent = 'Erreur lors de l\'envoi : ' + error;
+            });
+        });
+    </script>
 </body>
 
 </html>
