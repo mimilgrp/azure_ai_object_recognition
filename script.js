@@ -15,6 +15,11 @@ function get_creds() {
         });
 }
 
+function set_creds() {
+    creds["endpoint"] = prompt("Endpoint:")
+    creds["subscription-key"] = prompt("Subscription key:")
+}
+
 function import_picture() {
     display_reset();
     if (inputPicture.files[0]) {
