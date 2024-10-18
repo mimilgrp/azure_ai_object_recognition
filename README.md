@@ -2,7 +2,7 @@ AZURE AI OBJECT RECOGNITION PROJECT
 Powered by OUVRARD Emilien, MERYET Benjamin and ASTRUC Mathieu
 
 INSTRUCTIONS
-1-  Go to https://object_recognition.mimil-grp.eu (disabled if you are connected on ESAIP network) OR
+1-  Go to https://object_recognition.mimil-grp.eu (disabled if you are connected to ESAIP network) OR
     Download our project from https://github.com/mimilgrp/azure_ai_object_recognition/ and open "index.html" in your navigator
 2-  Set your Azure Lab credentials (endpoint and subscription-key) using the "Set credentials" button in the "Output" section
 3-  Import a picture using the "Import picture" button in the "Input" section
