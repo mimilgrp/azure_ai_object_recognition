@@ -40,7 +40,7 @@ body {
     max-height: 400px;
     object-fit: contain;
     object-position: center;
-    margin: 1em 0;
+    margin-bottom: 1em;
 }
 
 h2 {
@@ -72,7 +72,8 @@ h3 {
     border: 1px solid black;
     border-radius: 3px;
     padding: 3px 1em;
-    color: var(--black)
+    color: var(--black);
+    margin-bottom: 1em;
 }
 
 .output-display {
